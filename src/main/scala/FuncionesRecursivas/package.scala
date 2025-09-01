@@ -14,6 +14,21 @@ package object FuncionesRecursivas {
     }
     maxIter(iterList = l.tail, currentMax = l.head)
   }
+
+  def movsTorresHanoi(n: Int): BigInt ={
+    if (n == 0) BigInt(0)
+    else BigInt(2).pow(n) - 1
+  }
+
+  def torresHanoi(n: Int, t1: Int, t2: Int, t3: Int): List[(Int, Int)] = {
+    if (n == 0) Nil
+    else {
+      val paso1 = torresHanoi(n - 1, t1, t3, t2)
+      val movimiento = List((t1, t3))
+      val paso2 = torresHanoi(n - 1, t2, t1, t3)
+      paso1 ++ movimiento ++ paso2
+    }
+  }
 }
 
 
