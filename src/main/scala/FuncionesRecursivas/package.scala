@@ -17,8 +17,9 @@ package object FuncionesRecursivas {
 
   def movsTorresHanoi(n: Int): BigInt ={
     if (n == 0) BigInt(0)
-    else BigInt(2).pow(n) - 1
+    else 2 * movsTorresHanoi(n - 1) + 1
   }
+
 
   def torresHanoi(n: Int, t1: Int, t2: Int, t3: Int): List[(Int, Int)] = {
     if (n == 0) Nil
