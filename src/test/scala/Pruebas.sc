@@ -30,11 +30,13 @@ maxIt(onlyHeadIt)
 maxIt(equalValueIt)
 
 // Pruebas para Torres de Hanoi
+val siglo: BigInt = BigInt(60)*BigInt(60)*BigInt(24)*BigInt(365)*BigInt(100)
 movsTorresHanoi(0) // Empty
 movsTorresHanoi(1) // base
 movsTorresHanoi(2) // even
 movsTorresHanoi(3) // odd
-movsTorresHanoi(64) //BigNumber (verify formula)
+movsTorresHanoi(64) //BigNumber
+movsTorresHanoi(64)/siglo
 
 torresHanoi(0,1,2,3) // n = 0 empty list
 torresHanoi(1,1,2,3)
